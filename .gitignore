@@ -10,3 +10,4 @@
 .buildpath
 .classpath
 .project
+/target/
