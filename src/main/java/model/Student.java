@@ -12,7 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="entries")
+@Table(name="students") // Changed table name to students
 public class Student {
 	// attributes
 	@Id
