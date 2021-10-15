@@ -16,16 +16,20 @@ body {background-color: rgb(198, 207, 221);}
 </head>
 <body>
 <h1>Course Database Home</h1>
+<br />
 
+<h3>Add Course:</h3>
+<form action = "AddCourseServlet" method="post">
+Course Name: <input type ="text" name = "courseName">
+Teacher Name: <input type ="text" name = "courseTeacher">
 
-<h3>Add Student:</h3>
-<form action = "AddStudentServlet" method="post">
-Name: <input type ="text" name = "name">
-
-<input type = "submit" value="Add Student">
+<input type = "submit" value="Add Course">
 </form> <br />
 
-<li><a href = "ViewAllStudentsServlet">View all students</a></li>
+<a href = "ViewAllCoursesServlet">View all courses</a><br />
+
+<a href="ViewAllListsServlet">View all course lists</a><br />
+<a href="AddCoursesForListServlet">Create a new list</a><br />
 
 </body>
 </html>
