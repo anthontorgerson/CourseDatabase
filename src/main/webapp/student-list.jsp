@@ -14,7 +14,7 @@ a:visited {text-decoration: none;}
 a:link {color: black;}
 a:visited {color: black;}
 a:hover {color: purple;}
-body {background-color: #bce6df;}
+body {background-color: rgb(198, 207, 221);}
 </style>
 </head>
 <body>
