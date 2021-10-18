@@ -29,7 +29,8 @@ public class CourseDetails {
 	private LocalDate startDate;
 	@ManyToOne(cascade = CascadeType.PERSIST)
 	private Student student;
-	@OneToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
+	//Changed cascade type to MERGE
+	@OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
 	private List<Course> listOfCourses;
 
 	public CourseDetails() {

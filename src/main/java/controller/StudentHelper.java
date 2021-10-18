@@ -9,6 +9,7 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
 
@@ -82,6 +83,26 @@ static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("
 		em.close();
 		return foundEntries;
 	}
+	
+	// Added findStudent
+	public Student findStudent(String nameToLookUp) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		TypedQuery<Student> typedQuery = em.createQuery("select sh from Student sh where sh.studentName = :selectedName", Student.class);
+		typedQuery.setParameter("selectedName", nameToLookUp);
+		typedQuery.setMaxResults(1);
+		Student foundStudent;
+		
+		try {
+			foundStudent = typedQuery.getSingleResult();
+		} 
+		catch (NoResultException ex) {
+			foundStudent = new Student(nameToLookUp);
+		}
+		
+		em.close();
+		return foundStudent;
+		}
 	
 	public void cleanUp(){
 		emfactory.close();

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Course Database Home</title>
+
+<style>
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:link {color: black;}
+a:visited {color: black;}
+a:hover {color: purple;}
+body {background-color: rgb(198, 207, 221);}
+</style>
+
+</head>
+<body>
+<h1>Course Database Home</h1>
+<br />
+
+<h3>Add Course:</h3>
+<form action = "AddCourseServlet" method="post">
+Course Name: <input type ="text" name = "courseName">
+Teacher Name: <input type ="text" name = "courseTeacher">
+
+<input type = "submit" value="Add Course">
+</form> <br />
+
+<a href = "ViewAllCoursesServlet">View all courses</a><br />
+
+<a href="ViewAllListsServlet">View all course lists</a><br />
+<a href="AddCoursesForListServlet">Create a new list</a><br />
+
+</body>
+</html>
